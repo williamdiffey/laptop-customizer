@@ -25,10 +25,10 @@ class App extends Component {
         Display: {
             name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
             cost: 1500
-          },
+          }
       },
       Total: null
-    }
+    };
   }
 
   updateFeature = (feature, newValue) => {
@@ -44,7 +44,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <FeatureList features={this.props.features} onUpdate={this.updateFeature} />
+          <FeatureList 
+          features={this.props.features} 
+          selection={this.state.selected}
+          onUpdate={this.updateFeature} />
           <Summary summary={this.state.selected} />
         </main>
       </div>
